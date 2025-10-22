@@ -233,3 +233,51 @@ document.querySelectorAll('button, .btn-primary, .btn-secondary').forEach(btn =>
 });
 
 console.log('Travel Wings Global website loaded successfully!');
+
+ 
+
+    //  function toggleDescription(button) {
+    //     const card = button.closest('.card-content');
+    //     const fullDesc = card.querySelector('.full-description');
+
+    //     if (fullDesc.style.display === "none" || fullDesc.style.display === "") {
+    //         fullDesc.style.display = "block";
+    //         button.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
+    //     } else {
+    //         fullDesc.style.display = "none";
+    //         button.innerHTML = 'Learn More <i class="fas fa-arrow-right"></i>';
+    //     }
+    // }
+
+    function toggleDescription(button) {
+    const cardContent = button.closest('.card-content');
+    const fullDesc = cardContent.querySelector('.full-description');
+
+    if (fullDesc.style.display === "none" || fullDesc.style.display === "") {
+        fullDesc.style.display = "block";
+        button.innerHTML = 'Show Less <i class="fas fa-arrow-up"></i>';
+    } else {
+        fullDesc.style.display = "none";
+        button.innerHTML = 'Learn More <i class="fas fa-arrow-right"></i>';
+    }
+}
+
+
+ document.querySelectorAll('.lightbox').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const imgSrc = this.getAttribute('href');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightbox = document.getElementById('lightbox');
+      lightboxImg.src = imgSrc;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  document.getElementById('lightbox').addEventListener('click', function () {
+    this.style.display = 'none';
+  });
+
+
+
+ 
